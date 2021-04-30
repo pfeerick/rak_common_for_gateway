@@ -13,7 +13,7 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
-systemctl disable hciuart
+# systemctl disable hciuart 
 
 apt install git ppp dialog jq minicom monit i2c-tools -y
 
