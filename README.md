@@ -13,7 +13,7 @@ The aim of this project is to help users to use the RAK Raspberry Pi Developer G
 ### Pine64 Gateway Setup
 
 *NOTE: my goal was basically at this point to get the concentrator started/GPS working. If you notice changes needed
-please do post an issue or submit something! :)
+please do post an issue/submit or fork something! Thanks! :)
 
 General Steps:
 
@@ -28,7 +28,7 @@ https://mega.nz/file/Wd5CGRhB#spBqSQrhLm_gIPtRexV9OOC8T3YoVk9VuHopFs4Ho9o
 2.) After installing an LTS/SOPINE compatible image to sdcard/emmc, boot up and clone this fork by issuing:
 clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
-3.) Now issue: sudo armbian-config -> System and enable UART/SPI/I2C Concentrator/GPS/Temp sensor
+3.) Now issue: sudo armbian-config -> System and enable UART/SPI/I2C (Concentrator/GPS/Temp sensor)
 
 4.) Make sure /boot/armbianEnv.txt has this line in it: param_spidev_spi_bus=0
 
@@ -38,11 +38,11 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
 7.) Follow rak_common_for_gateway instructions
 
-8.) After installing everything using clone open the command: sudo gateway-config
+8.) After installing everything (using clone edit) open the command: sudo gateway-config
 
 9.) inside gateway-config go to packet forwarder config editing
 
-10.) make sure the SPI device is /dev/spidev0.0
+10.) make sure the SPI device says /dev/spidev0.0 
 
 11.) make sure the GPS device is /dev/ttyS2
 
@@ -58,10 +58,10 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
 17.) Once GPS registers reliable signal (usually a few min after starting) you should see your Gateway on TTN map and tcpdump|grep 1700 should show valid radius packets. 
 
-You should also see the Gateway version + EUI and other information on starting the concentrator. I have examples of journalctl log at:
+You should also see the Gateway version + EUI and other information on starting the concentrator, along with version without any errors.. I have examples of journalctl log at:
 https://forum.pine64.org/showthread.php?tid=13682&highlight=pinedio
 
-[ will edit more soon please check back ]
+[ will edit more soon please check back and feel free to add/fix anything that you notice to help us get Pine64 Gateway running properly! :) ]
 
 [/END EDIT PINE64 GATEWAY SETUP]
 ------------------------------------------------------------------
