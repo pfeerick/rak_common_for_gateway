@@ -45,7 +45,7 @@ function echo_model_info()
     echo_yellow "*\t 4.RAK2247(USB)"
     echo_yellow "*\t 5.RAK2247(SPI)"
     echo_yellow "*\t 6.RAK2246"
-    echo_yellow "*\t 7.RAK7248 no LTE (RAK2287 SPI + raspberry pi)"
+    echo_yellow "*\t 7.RAK7248 no LTE (RAK2287 SPI + Pine64 Gateway)"
 	echo_yellow "*\t 8.RAK7248 with LTE (RAK2287 SPI + LTE + raspberry pi)"
     echo_yellow "*\t 9.RAK2287 USB"
     echo_yellow  "Please enter 1-9 to select the model:\c"
