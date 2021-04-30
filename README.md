@@ -28,7 +28,7 @@ https://mega.nz/file/Wd5CGRhB#spBqSQrhLm_gIPtRexV9OOC8T3YoVk9VuHopFs4Ho9o
 2.) After installing an LTS/SOPINE compatible image to sdcard/emmc, boot up and clone this fork by issuing:
 clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
-3.) Now issue: sudo armbian-config -> System and enable the UART/SPI devices
+3.) Now issue: sudo armbian-config -> System and enable UART/SPI/I2C Concentrator/GPS/Temp sensor
 
 4.) Make sure /boot/armbianEnv.txt has this line in it: param_spidev_spi_bus=0
 
