@@ -90,9 +90,9 @@ sudo gateway-config
 	
 * Ensure the GPS location matches:
 
-/* GPS configuration */
+	"/* GPS configuration */
         "gps_tty_path": "/dev/ttyS2",
-        /* GPS reference coordinates */
+        /* GPS reference coordinates */"
 
 (anytime you edit packet-forwarder config, make sure to then restart packet forwarder)
 
