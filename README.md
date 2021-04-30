@@ -85,8 +85,6 @@ sudo gateway-config
 - Check packet forwarder config to ensure device location is correct: sudo gateway-config ---> edit packet-forwarder config 
 * Ensure the SX120x_conf location in packet-forwarder config matches:
 
-{
-    "SX130x_conf": {
         "com_type": "SPI",
         "com_path": "/dev/spidev0.0",
 	
@@ -99,10 +97,10 @@ sudo gateway-config
 (anytime you edit packet-forwarder config, make sure to then restart packet forwarder)
 
 ***GPS not registering location? 
-- Consider running your GPS antenna closer to your window. GPS needs a direct line of sight. To test out GPS try looking at gpsmon or cat /dev/ttyS2
+- Consider running GPS antenna closer to a window (if indoors). GPS needs a direct line of sight. To test out GPS try looking at gpsmon or cat /dev/ttyS2
 (ensuring GPS functions before expecting gateway to read it is recommended)
 
-[/END EDIT PINE64 GATEWAY SETUP]
+[/END EDIT PINE64 GATEWAY SETUP START]
 ------------------------------------------------------------------
 
 ##	Supported platforms
