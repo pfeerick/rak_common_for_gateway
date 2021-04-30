@@ -6,13 +6,13 @@ The aim of this project is to help users to use the RAK Raspberry Pi Developer G
 
 --------------------------------------------------------------------------
 
-[BEGIN EDITED FOR PINE64 HARDWARE]:
+[BEGIN EDIT INSTRUCTION FOR PINE64 HARDWARE]:
 
 *** EDITED for work with Pine64 Gateway - work in progress more information/instruction soon *** -RTP
 
 ### Pine64 Gateway Setup
 
-*NOTE: I have not worked on everything and my goal was basically at this point to get the concentrator started/GPS working. If you notice changes needed
+*NOTE: my goal was basically at this point to get the concentrator started/GPS working. If you notice changes needed
 please do post an issue or submit something! :)
 
 General Steps:
@@ -36,7 +36,7 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
 6.) cd into your cloned rak_common_for_gateway directory (cloned from this fork from step #2)
 
-7.) Follow the rak_common_for_gateway instructions as normal
+7.) Follow rak_common_for_gateway instructions
 
 8.) After installing everything using clone open the command: sudo gateway-config
 
@@ -56,10 +56,12 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
 16.) You may need to enter gateway-config again and re-enter the devices in case a 3rd party package changes them (something I noticed and have not edited atm)
 
-17.) Once GPS registers reliable signal you should see your Gateway on TTN map and tcpdump|grep 1700 should show valid radius packets. 
+17.) Once GPS registers reliable signal (usually a few min after starting) you should see your Gateway on TTN map and tcpdump|grep 1700 should show valid radius packets. 
 
+You should also see the Gateway version + EUI and other information on starting the concentrator. I have examples of journalctl log at:
+https://forum.pine64.org/showthread.php?tid=13682&highlight=pinedio
 
-[ I may edit this later as I reinstall things. righttoprivacy[at]tutanota.com ]
+[ will edit more please check back ]
 
 [/END EDITED FOR PINE64 HARDWARE]
 ------------------------------------------------------------------
