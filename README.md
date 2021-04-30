@@ -42,9 +42,9 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
 9.) inside gateway-config go to packet forwarder config editing
 
-10.) make sure the SPI device says /dev/spidev0.0 
+10.) make sure the SPI device says /dev/spidev0.0 and not something else 
 
-11.) make sure the GPS device is /dev/ttyS2
+11.) make sure the GPS device is /dev/ttyS2 
 
 12.) Save the Packet Forwarder config and change the LoRa channel config to TTN (The Things Network)
 
@@ -58,10 +58,49 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 
 17.) Once GPS registers reliable signal (usually a few min after starting) you should see your Gateway on TTN map and tcpdump|grep 1700 should show valid radius packets. 
 
-You should also see the Gateway version + EUI and other information on starting the concentrator, along with version without any errors.. I have examples of journalctl log at:
+You should also see the Gateway version + EUI and other information on starting the concentrator, without any errors.. If you see errors, check troubleshooting below. I have examples of journalctl log at:
 https://forum.pine64.org/showthread.php?tid=13682&highlight=pinedio
 
 [ will edit more soon please check back and feel free to add/fix anything that you notice to help us get Pine64 Gateway running properly! :) ]
+
+***TROUBLESHOOTING:
+
+The Things Network Gateway Commands (SSH/Shell access):
+Check the status of ttn-gateway (if selecting The Things Network Channel) service by issuing:
+systemctl status ttn-gateway
+Restart TTN Gateway:
+systemctl restart ttn-gateway
+Stop TTN Gateway:
+systemctl stop ttn-gateway
+Start TTN Gateway:
+systemctl start ttn-gateway
+
+Check gateway version/ID
+gateway-version
+
+Configuration:
+sudo gateway-config
+
+***Gateway failed to start concentrator? 
+- Check packet forwarder config to ensure device location is correct: sudo gateway-config ---> edit packet-forwarder config 
+* Ensure the SX120x_conf location in packet-forwarder config matches:
+
+{
+    "SX130x_conf": {
+        "com_type": "SPI",
+        "com_path": "/dev/spidev0.0",
+	
+* Ensure the GPS location matches:
+
+/* GPS configuration */
+        "gps_tty_path": "/dev/ttyS2",
+        /* GPS reference coordinates */
+
+(anytime you edit packet-forwarder config, make sure to then restart packet forwarder)
+
+***GPS not registering location? 
+- Consider running your GPS antenna closer to your window. GPS needs a direct line of sight. To test out GPS try looking at gpsmon or cat /dev/ttyS2
+(ensuring GPS functions before expecting gateway to read it is recommended)
 
 [/END EDIT PINE64 GATEWAY SETUP]
 ------------------------------------------------------------------
