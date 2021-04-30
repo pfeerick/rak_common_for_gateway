@@ -4,7 +4,66 @@
 
 The aim of this project is to help users to use the RAK Raspberry Pi Developer Gateway more easily. The User Guide can be get from our Web(https://docs.rakwireless.com/Introduction/).
 
+--------------------------------------------------------------------------
+
+[BEGIN EDITED FOR PINE64 HARDWARE]:
+
 *** EDITED for work with Pine64 Gateway - work in progress more information/instruction soon *** -RTP
+
+### Pine64 Gateway Setup
+
+*NOTE: I have not worked on everything and my goal was basically at this point to get the concentrator started/GPS working. If you notice changes needed
+please do post an issue or submit something! :)
+
+General Steps:
+
+*** First make sure you have LoRa antenna + GPS antenna (preferably outside or antenna by the window- without GPS it will not show up on TTN); ***Very Important*** to
+have antennas before attempting to setup or you could damage your device ***
+
+1.) Download your distribution of choice
+(you can try one of the SOPINE/LTS capable distros; There was a boot problem on the Armbian image as of this writing I have patched an Armbian image you can find here:
+https://mega.nz/file/Wd5CGRhB#spBqSQrhLm_gIPtRexV9OOC8T3YoVk9VuHopFs4Ho9o
+)
+
+2.) After installing an LTS/SOPINE compatible image to sdcard/emmc, boot up and clone this fork by issuing:
+clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
+
+3.) Now issue: sudo armbian-config -> System and enable the UART/SPI devices
+
+4.) Make sure /boot/armbianEnv.txt has this line in it: param_spidev_spi_bus=0
+
+5.) Reboot for changes to take effect.  
+
+6.) cd into your cloned rak_common_for_gateway directory (cloned from this fork from step #2)
+
+7.) Follow the rak_common_for_gateway instructions as normal
+
+8.) After installing everything using clone open the command: sudo gateway-config
+
+9.) inside gateway-config go to packet forwarder config editing
+
+10.) make sure the SPI device is /dev/spidev0.0
+
+11.) make sure the GPS device is /dev/ttyS2
+
+12.) Save the Packet Forwarder config and change the LoRa channel config to TTN (The Things Network)
+
+13.) Select your country's LoRa location/frequency
+
+14.) Restart Packet Forwarder and quit
+
+15.) Check the status by viewing journalctl or systemctl status ttn-gateway; if not active, check journalctl to see what failed and its reasoning
+
+16.) You may need to enter gateway-config again and re-enter the devices in case a 3rd party package changes them (something I noticed and have not edited atm)
+
+17.) Once GPS registers reliable signal you should see your Gateway on TTN map and tcpdump|grep 1700 should show valid radius packets. 
+
+
+[ I may edit this later as I reinstall things. righttoprivacy[at]tutanota.com ]
+
+[/END EDITED FOR PINE64 HARDWARE]
+------------------------------------------------------------------
+
 ##	Supported platforms
 
 This project currently provides support for the below platforms.
