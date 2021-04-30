@@ -11,7 +11,7 @@
 # GPIO mapping has to be adapted with HW
 #
 
-SX1302_RESET_PIN=17
+SX1302_RESET_PIN=71		# Pine64 = 71, RPI 17
 
 WAIT_GPIO() {
     sleep 0.1
