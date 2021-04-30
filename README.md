@@ -4,6 +4,7 @@
 
 The aim of this project is to help users to use the RAK Raspberry Pi Developer Gateway more easily. The User Guide can be get from our Web(https://docs.rakwireless.com/Introduction/).
 
+*** EDITED for work with Pine64 Gateway - work in progress more information/instruction soon *** -RTP
 ##	Supported platforms
 
 This project currently provides support for the below platforms.
@@ -16,7 +17,7 @@ This project currently provides support for the below platforms.
 * RAK833(SPI)(Choose RAK2247 SPI)
 * RAK2247(SPI)
 * RAK2246
-* RAK7248 no LTE (RAK2287 + raspberry pi)
+* RAK7248 no LTE (RAK2287 + Pine64)
 * RAK7248 with LTE (RAK2287 + LTE + raspberry pi)
 
 ##	Changelog
