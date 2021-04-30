@@ -88,17 +88,21 @@ sudo gateway-config
         "com_type": "SPI",
         "com_path": "/dev/spidev0.0",
 	
-* Ensure the GPS location matches:
-
-	"/* GPS configuration */
+* Ensure GPS matches /dev/ttyS2:
+	
         "gps_tty_path": "/dev/ttyS2",
-        /* GPS reference coordinates */"
 
 (anytime you edit packet-forwarder config, make sure to then restart packet forwarder)
 
 ***GPS not registering location? 
 - Consider running GPS antenna closer to a window (if indoors). GPS needs a direct line of sight. To test out GPS try looking at gpsmon or cat /dev/ttyS2
 (ensuring GPS functions before expecting gateway to read it is recommended)
+
+- See if you have GPS location information by running: cat /dev/ttyS2 or gpsmon (thanks JF for mentioning this- helped me)
+
+If you have more tips/troubleshooting/information, please do send: either as an issue, fork, mod. Or optionally email: righttoprivacy[at]tutanota.com
+
+Thanks! :)
 
 [/END EDIT PINE64 GATEWAY SETUP START]
 ------------------------------------------------------------------
