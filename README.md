@@ -6,7 +6,7 @@ The aim of this project is to help users to use the RAK Raspberry Pi Developer G
 
 --------------------------------------------------------------------------
 
-[BEGIN EDIT INSTRUCTION FOR PINE64 HARDWARE]:
+[BEGIN EDIT INSTRUCTION FOR PINE64 GATEWAY (ONLY TESTED FOR TTN SO FAR]:
 
 *** EDITED for work with Pine64 Gateway - work in progress more information/instruction soon *** -RTP
 
@@ -61,9 +61,9 @@ clone https://github.com/RightToPrivacy/rak_common_for_gateway.git
 You should also see the Gateway version + EUI and other information on starting the concentrator. I have examples of journalctl log at:
 https://forum.pine64.org/showthread.php?tid=13682&highlight=pinedio
 
-[ will edit more please check back ]
+[ will edit more soon please check back ]
 
-[/END EDITED FOR PINE64 HARDWARE]
+[/END EDIT PINE64 GATEWAY SETUP]
 ------------------------------------------------------------------
 
 ##	Supported platforms
