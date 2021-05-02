@@ -9,11 +9,11 @@ if [ $(id -u) -ne 0 ]; then
   exit 1
 fi
 
-rpi_model=`do_get_rpi_model`
-if [ $rpi_model -ne 3 ] && [ $rpi_model -ne 4 ]; then
-    echo_warn "ChirpStack is not support for this rpi model."
-    exit 0
-fi
+#rpi_model=`do_get_rpi_model` # Check/exit commented out for Pine64 (otherwise exits as not RPI)
+#if [ $rpi_model -ne 3 ] && [ $rpi_model -ne 4 ]; then
+#    echo_warn "ChirpStack is not support for this rpi model."
+#    exit 0
+#fi
 
 GATEWAY_EUI=`do_get_gw_id`
 
